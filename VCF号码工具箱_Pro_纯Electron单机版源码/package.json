@@ -1,0 +1,39 @@
+{
+  "name": "vcf-toolbox-pro",
+  "version": "1.0.0",
+  "description": "VCF号码工具箱 Pro - 单机离线桌面版",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.vcftoolbox.pro",
+    "productName": "VCF号码工具箱 Pro",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "VCF号码工具箱 Pro"
+    }
+  }
+}
